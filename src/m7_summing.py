@@ -7,6 +7,7 @@ Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
          their colleagues and Myon McGee.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -17,7 +18,7 @@ def main():
 def run_test_sum_cosines():
     """ Tests the   sum_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function.
+    # DONE: 2. Implement this function.
     #   It TESTS the  sum_cosines  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -30,19 +31,19 @@ def run_test_sum_cosines():
     print('--------------------------------------------------')
 
     # Test 1:
-    expected = 5.991626805
+    expected = -.2358184627
     answer = sum_cosines(5)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
-    # Test 1:
-    expected = 1.999847695
+    # Test 2:
+    expected = 1.540302306
     answer = sum_cosines(1)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
-    # Test 1:
-    expected = 2.999238522
+    # Test 3:
+    expected = 1.124155469
     answer = sum_cosines(2)
     print('Test 3 expected:', expected)
     print('       actual:  ', answer)
@@ -60,7 +61,7 @@ def sum_cosines(n):
         cos(0) + cos(1) + cos(2) + cos(3)   which is about 0.13416.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -68,11 +69,18 @@ def sum_cosines(n):
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
 
+    total = 0
+    n = n+1
+
+    for i in range(n):
+        total += math.cos(i)
+
+    return total
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function.
+    # DONE: 4. Implement this function.
     #   It TESTS the  sum_square_roots  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -83,6 +91,24 @@ def run_test_sum_square_roots():
     print('--------------------------------------------------')
     print('Testing the   sum_square_roots   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    expected = 5.863703305
+    answer = sum_square_roots(3)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 3.414213562
+    answer = sum_square_roots(2)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 1.414213562
+    answer = sum_square_roots(1)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
 
 
 def sum_square_roots(n):
@@ -99,13 +125,24 @@ def sum_square_roots(n):
       which is about 11.854408.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
     #   No fair running the code of  sum_square_roots  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
+
+    total = 0
+    k = 0
+
+    for i in range(n):
+        k += 2
+
+        m = math.sqrt(k)
+        total+= m
+
+    return total
 
 
 # ----------------------------------------------------------------------
